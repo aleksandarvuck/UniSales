@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniSales.API", "UniSales.API\UniSales.API.csproj", "{C2D22050-42C0-4FF4-A3E4-C4CFF34FECA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniSales.API", "UniSales.API\UniSales.API.csproj", "{C2D22050-42C0-4FF4-A3E4-C4CFF34FECA8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniSales.Core", "UniSales.Core\UniSales.Core.csproj", "{7AF242DD-750A-4184-9343-B5E6CFD2E6DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{0F773286-64C7-49FA-81BB-2B81A1ACAAE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniSales.Android", "UniSales.Android\UniSales.Android.csproj", "{B1646847-AAB9-4BE2-8B87-E6439BE45D4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +21,23 @@ Global
 		{C2D22050-42C0-4FF4-A3E4-C4CFF34FECA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2D22050-42C0-4FF4-A3E4-C4CFF34FECA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2D22050-42C0-4FF4-A3E4-C4CFF34FECA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AF242DD-750A-4184-9343-B5E6CFD2E6DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AF242DD-750A-4184-9343-B5E6CFD2E6DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AF242DD-750A-4184-9343-B5E6CFD2E6DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AF242DD-750A-4184-9343-B5E6CFD2E6DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1646847-AAB9-4BE2-8B87-E6439BE45D4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1646847-AAB9-4BE2-8B87-E6439BE45D4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1646847-AAB9-4BE2-8B87-E6439BE45D4E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B1646847-AAB9-4BE2-8B87-E6439BE45D4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1646847-AAB9-4BE2-8B87-E6439BE45D4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1646847-AAB9-4BE2-8B87-E6439BE45D4E}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7AF242DD-750A-4184-9343-B5E6CFD2E6DD} = {0F773286-64C7-49FA-81BB-2B81A1ACAAE0}
+		{B1646847-AAB9-4BE2-8B87-E6439BE45D4E} = {0F773286-64C7-49FA-81BB-2B81A1ACAAE0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {16571871-4D33-416E-94DD-CD38E277C162}

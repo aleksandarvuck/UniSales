@@ -60,9 +60,9 @@ namespace UniSales.API.Services
             }
         }
 
-        public Task<bool> SacuvajIzmeneAsync()
+        public async Task<bool> SacuvajIzmeneAsync()
         {
-            throw new NotImplementedException();
+            return await _context.SaveChangesAsync() > 0;
         }
 
         public void Dispose()

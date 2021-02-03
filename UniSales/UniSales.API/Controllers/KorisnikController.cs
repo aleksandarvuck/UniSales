@@ -24,7 +24,7 @@ namespace UniSales.API.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> GetEmployees()
+        public async Task<IActionResult> PreuzmiKorisnike()
         {
             var employeesFromRepo = await _repository.PreuzmiKorisnikeAsync().ConfigureAwait(false);
 
