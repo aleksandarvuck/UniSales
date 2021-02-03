@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace UniSales.API.Entities
 {
-    public  class Proizvod
+    public class Proizvod
     {
         public int ProizvodID { get; set; }
 
@@ -21,8 +21,8 @@ namespace UniSales.API.Entities
 
         public DateTime DatumPostavljanja { get; set; }
 
-        public  ICollection<PorudzbinaProizvod> PorudzbinaProizvod { get; set; }
+        public ICollection<PorudzbinaProizvod> PorudzbinaProizvod { get; set; }
 
-        public  ICollection<Grupa> Grupa { get; set; }
+        public ICollection<Grupa> Grupa { get; set; }
     }
 }

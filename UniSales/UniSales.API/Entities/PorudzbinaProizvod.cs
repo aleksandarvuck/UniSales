@@ -2,7 +2,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace UniSales.API.Entities
 {
-
     public class PorudzbinaProizvod
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]

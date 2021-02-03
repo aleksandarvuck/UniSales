@@ -1,9 +1,9 @@
-using System;
-using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Web;
+using System;
+using System.IO;
 
 namespace UniSales.API
 {
@@ -15,10 +15,8 @@ namespace UniSales.API
 
             try
             {
-
                 logger.Debug("init main function");
                 CreateHostBuilder(args).Build().Run();
-
             }
             catch (Exception ex)
             {

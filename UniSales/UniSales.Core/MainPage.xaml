@@ -15,7 +15,6 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-
         <AbsoluteLayout
             Grid.Row="1"
             Grid.Column="1"
@@ -49,7 +48,6 @@
                             Text="{Binding Password}" />
                     </StackLayout>
 
-
                     <Button
                         BackgroundColor="Gray"
                         BorderColor="Crimson"
@@ -60,7 +58,6 @@
                         HorizontalOptions="Center"
                         Text="Sign In"
                         VerticalOptions="Center" />
-
                 </StackLayout>
             </Frame>
 
@@ -74,5 +71,4 @@
                 VerticalOptions="Fill" />
         </AbsoluteLayout>
     </Grid>
-
 </ContentPage>

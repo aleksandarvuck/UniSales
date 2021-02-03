@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using UniSales.API.Contracts;
 using UniSales.API.Models.Korisnik;
 
@@ -21,7 +20,6 @@ namespace UniSales.API.Controllers
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
-
 
         [HttpGet]
         public async Task<IActionResult> PreuzmiKorisnike()

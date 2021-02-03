@@ -21,6 +21,5 @@ namespace UniSales.API.Models.Porudzbina
         public int KorisnikID { get; set; }
 
         public int KupacID { get; set; }
-
     }
 }

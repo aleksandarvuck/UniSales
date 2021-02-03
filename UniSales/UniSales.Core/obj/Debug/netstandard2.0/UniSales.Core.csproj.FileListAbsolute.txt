@@ -4,6 +4,10 @@ C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.Core\bin\De
 C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\UniSales.Core.csprojAssemblyReference.cache
 C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\Views\LoginView.xaml.g.cs
+C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\Views\MainView.xaml.g.cs
+C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\Views\RegistrationView.xaml.g.cs
+C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\Views\UniSalesNavigationPage.xaml.g.cs
 C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\UniSales.Core.AssemblyInfoInputs.cache
 C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\UniSales.Core.AssemblyInfo.cs
 C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\UniSales.Core.csproj.CoreCompileInputs.cache

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 
 namespace UniSales.API.Profiles
 {
@@ -13,7 +9,6 @@ namespace UniSales.API.Profiles
             CreateMap<Entities.Kupac, Models.Kupac.KupacDto>();
             CreateMap<Models.Kupac.KupacForCreationDto, Entities.Kupac>();
             CreateMap<Models.Kupac.KupacForUpdateDto, Entities.Kupac>();
-
         }
     }
 }

@@ -3,10 +3,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace UniSales.API.Entities
 {
-
-    public  class Korisnik
+    public class Korisnik
     {
-
         public int KorisnikID { get; set; }
 
         [Required]
@@ -28,6 +26,6 @@ namespace UniSales.API.Entities
         [StringLength(100)]
         public string KorisnickoIme { get; set; }
 
-        public  ICollection<Porudzbina> Porudzbina { get; set; }
+        public ICollection<Porudzbina> Porudzbina { get; set; }
     }
 }

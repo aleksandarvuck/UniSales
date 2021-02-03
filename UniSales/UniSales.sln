@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{0F7732
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniSales.Android", "UniSales.Android\UniSales.Android.csproj", "{B1646847-AAB9-4BE2-8B87-E6439BE45D4E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{FD6477A1-8EE1-4163-965E-EEA0E002332A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{C2D22050-42C0-4FF4-A3E4-C4CFF34FECA8} = {FD6477A1-8EE1-4163-965E-EEA0E002332A}
 		{7AF242DD-750A-4184-9343-B5E6CFD2E6DD} = {0F773286-64C7-49FA-81BB-2B81A1ACAAE0}
 		{B1646847-AAB9-4BE2-8B87-E6439BE45D4E} = {0F773286-64C7-49FA-81BB-2B81A1ACAAE0}
 	EndGlobalSection

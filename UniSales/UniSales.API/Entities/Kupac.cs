@@ -3,11 +3,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace UniSales.API.Entities
 {
-
-    public  class Kupac
+    public class Kupac
     {
- 
-
         public int KupacID { get; set; }
 
         [Required]
@@ -37,6 +34,6 @@ namespace UniSales.API.Entities
         [Required]
         public string Lozinka { get; set; }
 
-        public  ICollection<Porudzbina> Porudzbina { get; set; }
+        public ICollection<Porudzbina> Porudzbina { get; set; }
     }
 }

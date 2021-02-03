@@ -2,8 +2,7 @@ using System;
 
 namespace UniSales.API.Entities
 {
-
-    public  class Porudzbina
+    public class Porudzbina
     {
         public int PorudzbinaID { get; set; }
 
@@ -23,8 +22,8 @@ namespace UniSales.API.Entities
 
         public int KupacID { get; set; }
 
-        public  Korisnik Korisnik { get; set; }
+        public Korisnik Korisnik { get; set; }
 
-        public  Kupac Kupac { get; set; }
+        public Kupac Kupac { get; set; }
     }
 }

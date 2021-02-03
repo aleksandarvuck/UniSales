@@ -1,9 +1,7 @@
 namespace UniSales.API.Models.Korisnik
 {
-
     public class KorisnikForCreationDto
     {
-
         public int KorisnikID { get; set; }
 
         public string Ime { get; set; }
@@ -12,11 +10,8 @@ namespace UniSales.API.Models.Korisnik
 
         public string Email { get; set; }
 
-
         public string Lozinka { get; set; }
 
-
         public string KorisnickoIme { get; set; }
-
     }
 }
