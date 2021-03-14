@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="UniSales.Core.Views.MenuView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behaviors="clr-namespace:UniSales.Core.Behaviors;assembly=UniSales.Core"
+    xmlns:templates1="clr-namespace:UniSales.Core.Templates;assembly=UniSales.Core"
+    Title=" ">
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="8*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Image Aspect="AspectFill" Source="carousel1.jpg" />
+            <Grid BackgroundColor="#444444" Opacity="0.8" />
+            <Label Style="{StaticResource MenuLabelStyle}" Text="{Binding WelcomeText}" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <ListView
+                CachingStrategy="RecycleElement"
+                HasUnevenRows="True"
+                ItemsSource="{Binding MenuItems}"
+                SeparatorVisibility="None">
+                <ListView.Behaviors>
+                    <behaviors:EventToCommandBehavior Command="{Binding MenuItemTappedCommand}" EventName="ItemTapped" />
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <templates1:MenuItemTemplate />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</ContentPage>

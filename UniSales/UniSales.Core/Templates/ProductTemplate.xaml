@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="UniSales.Core.Templates.ProductTemplate"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentView.Content>
+
+        <Frame
+            Margin="10"
+            Padding="10"
+            HeightRequest="200">
+            <Grid
+                Margin="1"
+                BackgroundColor="White"
+                RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="6*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="2*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Image
+                    Grid.Row="0"
+                    Grid.ColumnSpan="2"
+                    Aspect="AspectFill"
+                    Source="{Binding ImageUrl}" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Style="{StaticResource ProductTileNameStyle}"
+                    Text="{Binding Name}" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    HorizontalTextAlignment="End"
+                    Style="{StaticResource ProductTilePriceStyle}"
+                    Text="{Binding Price, Converter={StaticResource LocalCurrencyConverter}}" />
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Style="{StaticResource ProductTileDescriptionStyle}"
+                    Text="{Binding ShortDescription}" />
+                <Button
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Command="{Binding Source={x:Reference HomeViewPage}, Path=BindingContext.AddToCartCommand}"
+                    Style="{StaticResource RegularButton}"
+                    Text="Add to cart" />
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

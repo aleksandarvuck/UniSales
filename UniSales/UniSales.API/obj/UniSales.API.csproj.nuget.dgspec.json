@@ -1,26 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aleksandar Vuckovic\\source\\repos\\UniSales\\UniSales\\UniSales.API\\UniSales.API.csproj": {}
+    "C:\\Users\\aleks\\source\\repos\\UniSales\\UniSales\\UniSales.API\\UniSales.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aleksandar Vuckovic\\source\\repos\\UniSales\\UniSales\\UniSales.API\\UniSales.API.csproj": {
+    "C:\\Users\\aleks\\source\\repos\\UniSales\\UniSales\\UniSales.API\\UniSales.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aleksandar Vuckovic\\source\\repos\\UniSales\\UniSales\\UniSales.API\\UniSales.API.csproj",
+        "projectUniqueName": "C:\\Users\\aleks\\source\\repos\\UniSales\\UniSales\\UniSales.API\\UniSales.API.csproj",
         "projectName": "UniSales.API",
-        "projectPath": "C:\\Users\\Aleksandar Vuckovic\\source\\repos\\UniSales\\UniSales\\UniSales.API\\UniSales.API.csproj",
-        "packagesPath": "C:\\Users\\Aleksandar Vuckovic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aleksandar Vuckovic\\source\\repos\\UniSales\\UniSales\\UniSales.API\\obj\\",
+        "projectPath": "C:\\Users\\aleks\\source\\repos\\UniSales\\UniSales\\UniSales.API\\UniSales.API.csproj",
+        "packagesPath": "C:\\Users\\aleks\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\aleks\\source\\repos\\UniSales\\UniSales\\UniSales.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\DevExpress 20.2\\.NET Core Desktop Libraries\\Offline Packages",
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\Aleksandar Vuckovic\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress .NET Core Desktop 20.2.config",
+          "C:\\Users\\aleks\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -28,7 +25,6 @@
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\DevExpress 20.2\\.NET Core Desktop Libraries\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -48,29 +44,23 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
-            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
-              "target": "Package",
-              "version": "[8.1.0, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.2, )"
+              "version": "[5.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.2, )"
+              "version": "[5.0.4, )"
             },
-            "NLog": {
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[4.7.7, )"
-            },
-            "NLog.Web.AspNetCore": {
-              "target": "Package",
-              "version": "[4.10.0, )"
+              "version": "[5.0.4, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[5.6.3, )"
+              "version": "[6.1.0, )"
             }
           },
           "imports": [
@@ -91,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

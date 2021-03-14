@@ -3,7 +3,6 @@ C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.API\bin\Deb
 C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.API\bin\Debug\net5.0\publish\appsettings.Development.json
 C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.API\bin\Debug\net5.0\publish\appsettings.json
 C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.API\bin\Debug\net5.0\publish\UniSales.API.dll
-C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.API\bin\Debug\net5.0\publish\UniSales.API.deps.json
 C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.API\bin\Debug\net5.0\publish\UniSales.API.runtimeconfig.json
 C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.API\bin\Debug\net5.0\publish\UniSales.API.pdb
 C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.API\bin\Debug\net5.0\publish\AutoMapper.dll
@@ -45,3 +44,4 @@ C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.API\bin\Deb
 C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.API\bin\Debug\net5.0\publish\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.API\bin\Debug\net5.0\publish\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.API\bin\Debug\net5.0\publish\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.API\bin\Debug\net5.0\publish\UniSales.API.deps.json

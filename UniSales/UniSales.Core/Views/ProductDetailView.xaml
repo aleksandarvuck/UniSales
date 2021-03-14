@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="UniSales.Core.Views.ProductDetailView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="More Details">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid
+                BackgroundColor="White"
+                ColumnSpacing="0"
+                RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Image
+                    Grid.Row="0"
+                    Aspect="AspectFill"
+                    HeightRequest="150"
+                    Source="{Binding SelectedProduct.ImageUrl}"
+                    VerticalOptions="StartAndExpand" />
+                <Button
+                    Grid.Row="0"
+                    Margin="0,0,10,0"
+                    Command="{Binding AddToCartCommand}"
+                    HorizontalOptions="End"
+                    Style="{StaticResource RegularButton}"
+                    Text="Add to cart"
+                    VerticalOptions="End" />
+                <Grid
+                    Grid.Row="1"
+                    Margin="5"
+                    BackgroundColor="White"
+                    RowSpacing="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="50" />
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="3"
+                        Style="{StaticResource ProductTileNameStyle}"
+                        Text="{Binding SelectedProduct.Name}" />
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="3"
+                        HorizontalTextAlignment="End"
+                        Style="{StaticResource ProductTilePriceStyle}"
+                        Text="{Binding SelectedProduct.Price, Converter={StaticResource LocalCurrencyConverter}}" />
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Margin="3"
+                        Style="{StaticResource ProductTileDescriptionStyle}"
+                        Text="{Binding SelectedProduct.ShortDescription}" />
+                </Grid>
+                <Label
+                    Grid.Row="2"
+                    Margin="5"
+                    Style="{StaticResource ProductLongDescriptionStyle}"
+                    Text="{Binding SelectedProduct.LongDescription}" />
+                <Button
+                    Grid.Row="3"
+                    Margin="0,0,10,0"
+                    Command="{Binding ReadDescriptionCommand}"
+                    HorizontalOptions="Center"
+                    Style="{StaticResource RegularButton}"
+                    Text="Read description"
+                    VerticalOptions="Center" />
+                <Grid Grid.Row="4">
+                    <Image
+                        Aspect="Fill"
+                        HeightRequest="50"
+                        Source="patternwide.png" />
+                    <Label
+                        HorizontalOptions="Center"
+                        Style="{StaticResource RegularStyle}"
+                        Text="© 2021 UniSales Shop"
+                        VerticalOptions="Center" />
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

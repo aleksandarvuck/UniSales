@@ -7,18 +7,19 @@ namespace UniSales.Core.ViewModels.Base
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
-        protected readonly IConnectionService ConnectionService;
-        protected readonly IDialogService DialogService;
-        protected readonly INavigationService NavigationService;
-        private bool _isBusy;
+        protected readonly IConnectionService _connectionService;
+        protected readonly INavigationService _navigationService;
+        protected readonly IDialogService _dialogService;
 
         public ViewModelBase(IConnectionService connectionService, INavigationService navigationService,
-                    IDialogService dialogService)
+            IDialogService dialogService)
         {
-            ConnectionService = connectionService;
-            NavigationService = navigationService;
-            DialogService = dialogService;
+            _connectionService = connectionService;
+            _navigationService = navigationService;
+            _dialogService = dialogService;
         }
+
+        private bool _isBusy;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -32,15 +33,15 @@ namespace UniSales.Core.ViewModels.Base
             }
         }
 
-        public virtual Task InitializeAsync(object data)
-        {
-            return Task.FromResult(false);
-        }
-
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public virtual Task InitializeAsync(object data)
+        {
+            return Task.FromResult(false);
         }
     }
 }

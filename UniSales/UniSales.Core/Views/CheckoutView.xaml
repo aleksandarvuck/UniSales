@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="UniSales.Core.Views.CheckoutView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Check Out Now!">
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Image
+                Grid.Row="0"
+                Aspect="AspectFill"
+                HeightRequest="200"
+                Source="carousel3.jpg" />
+            <StackLayout Grid.Row="1">
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    Style="{StaticResource PageHeaderStyle}"
+                    Text="CHECK OUT NOW" />
+            </StackLayout>
+        </Grid>
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="55" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="7*" />
+            </Grid.ColumnDefinitions>
+            <Label
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Center"
+                Text="Enter your delivery address"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                Text="Street"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="2"
+                Grid.Column="0"
+                Text="Number"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="3"
+                Grid.Column="0"
+                Text="Zipcode"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="4"
+                Grid.Column="0"
+                Text="City"
+                VerticalOptions="Center" />
+            <Entry
+                Grid.Row="1"
+                Grid.Column="1"
+                Style="{StaticResource CheckoutEntryStyle}"
+                Text="{Binding Address.Street}" />
+            <Entry
+                Grid.Row="2"
+                Grid.Column="1"
+                Style="{StaticResource CheckoutEntryStyle}"
+                Text="{Binding Address.Number}" />
+            <Entry
+                Grid.Row="3"
+                Grid.Column="1"
+                Style="{StaticResource CheckoutEntryStyle}"
+                Text="{Binding Address.ZipCode}" />
+            <Entry
+                Grid.Row="4"
+                Grid.Column="1"
+                Style="{StaticResource CheckoutEntryStyle}"
+                Text="{Binding Address.City}" />
+            <Button
+                Grid.Row="5"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Command="{Binding PlaceOrderCommand}"
+                HorizontalOptions="Center"
+                Style="{StaticResource RegularButton}"
+                Text="Checkout now" />
+        </Grid>
+        <Grid>
+            <Image
+                Aspect="Fill"
+                HeightRequest="50"
+                Source="patternwide.png" />
+            <Label
+                HorizontalOptions="Center"
+                Style="{StaticResource RegularStyle}"
+                Text="© 2021 UniSales Shop"
+                VerticalOptions="Center" />
+        </Grid>
+    </StackLayout>
+</ContentPage>

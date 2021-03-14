@@ -19,7 +19,7 @@ namespace UniSales.Core.Converters
                 case MenuItemType.Contact:
                     return "ic_contact.png";
 
-                case MenuItemType.Product:
+                case MenuItemType.Products:
                     return "ic_products.png";
 
                 case MenuItemType.ShoppingCart:

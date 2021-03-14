@@ -28,7 +28,7 @@
                 <On Platform="Android, UWP, WinRT, WinPhone" Value="9" />
             </OnPlatform>
 
-            <Color x:Key="BethanyPurple">#a594c1</Color>
+            <Color x:Key="Purple">#a594c1</Color>
             <Color x:Key="HeaderGrey">#aaaaaa</Color>
             <Color x:Key="PlainGrey">#aaaaaa</Color>
             <Color x:Key="LightGrey">#cccccc</Color>
@@ -41,7 +41,6 @@
                 <Setter Property="TextColor" Value="{StaticResource HeaderGrey}" />
             </Style>
 
-
             <Style x:Key="RegularStyle" TargetType="{x:Type Label}">
                 <Setter Property="FontSize" Value="{StaticResource SmallFontSize}" />
                 <Setter Property="BackgroundColor" Value="Transparent" />
@@ -51,7 +50,7 @@
             <Style x:Key="LinkStyle" TargetType="{x:Type Label}">
                 <Setter Property="FontSize" Value="{StaticResource SmallFontSize}" />
                 <Setter Property="BackgroundColor" Value="Transparent" />
-                <Setter Property="TextColor" Value="{StaticResource BethanyPurple}" />
+                <Setter Property="TextColor" Value="{StaticResource Purple}" />
                 <Setter Property="FontAttributes" Value="Bold" />
             </Style>
 
@@ -83,7 +82,7 @@
             </Style>
 
             <Style x:Key="RegularButton" TargetType="{x:Type Button}">
-                <Setter Property="BackgroundColor" Value="{StaticResource BethanyPurple}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource Purple}" />
                 <Setter Property="TextColor" Value="{StaticResource LightForeground}" />
                 <Setter Property="VerticalOptions" Value="Center" />
             </Style>
@@ -96,7 +95,7 @@
                 <Setter Property="Margin" Value="5" />
             </Style>
 
-            <Style x:Key="PieTileNameStyle" TargetType="{x:Type Label}">
+            <Style x:Key="ProductTileNameStyle" TargetType="{x:Type Label}">
                 <Setter Property="FontSize" Value="{StaticResource SmallFontSize}" />
                 <Setter Property="TextColor" Value="{StaticResource EntryGrey}" />
                 <Setter Property="FontAttributes" Value="Bold" />
@@ -104,14 +103,14 @@
                 <Setter Property="HorizontalOptions" Value="Start" />
             </Style>
 
-            <Style x:Key="PieTilePriceStyle" TargetType="{x:Type Label}">
+            <Style x:Key="ProductTilePriceStyle" TargetType="{x:Type Label}">
                 <Setter Property="FontSize" Value="{StaticResource SmallFontSize}" />
-                <Setter Property="TextColor" Value="{StaticResource BethanyPurple}" />
+                <Setter Property="TextColor" Value="{StaticResource Purple}" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="HorizontalOptions" Value="End" />
             </Style>
 
-            <Style x:Key="PieTileDescriptionStyle" TargetType="{x:Type Label}">
+            <Style x:Key="ProductTileDescriptionStyle" TargetType="{x:Type Label}">
                 <Setter Property="FontSize" Value="{StaticResource SmallFontSize}" />
                 <Setter Property="TextColor" Value="{StaticResource EntryGrey}" />
                 <Setter Property="VerticalOptions" Value="Center" />
@@ -120,16 +119,15 @@
 
             <Style x:Key="ShoppingCartTileSmallStyle" TargetType="{x:Type Label}">
                 <Setter Property="FontSize" Value="{StaticResource SmallFontSize}" />
-                <Setter Property="TextColor" Value="{StaticResource BethanyPurple}" />
+                <Setter Property="TextColor" Value="{StaticResource Purple}" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="FontAttributes" Value="Bold" />
-
             </Style>
 
             <Style x:Key="ShoppingCartTotalStyle" TargetType="{x:Type Label}">
                 <Setter Property="FontSize" Value="{StaticResource MediumFontSize}" />
-                <Setter Property="TextColor" Value="{StaticResource BethanyPurple}" />
+                <Setter Property="TextColor" Value="{StaticResource Purple}" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="FontAttributes" Value="Bold" />
@@ -137,7 +135,7 @@
 
             <Style x:Key="ShoppingCartLabelTotalStyle" TargetType="{x:Type Label}">
                 <Setter Property="FontSize" Value="{StaticResource EntryGrey}" />
-                <Setter Property="TextColor" Value="{StaticResource BethanyPurple}" />
+                <Setter Property="TextColor" Value="{StaticResource Purple}" />
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="FontAttributes" Value="Bold" />
@@ -158,7 +156,7 @@
                 <Setter Property="FontAttributes" Value="Bold" />
             </Style>
 
-            <Style x:Key="PieLongDescriptionStyle" TargetType="{x:Type Label}">
+            <Style x:Key="ProductLongDescriptionStyle" TargetType="{x:Type Label}">
                 <Setter Property="FontSize" Value="{StaticResource SmallFontSize}" />
                 <Setter Property="TextColor" Value="{StaticResource EntryGrey}" />
                 <Setter Property="VerticalOptions" Value="Start" />
@@ -169,7 +167,8 @@
             <converters:MenuIconConverter x:Key="LocalMenuIconConverter" />
             <converters:CurrencyConverter x:Key="LocalCurrencyConverter" />
             <converters:CountToVisibilityConverter x:Key="LocalCountToVisibilityConverter" />
-
         </ResourceDictionary>
+
+        <!--  Application resource dictionary  -->
     </Application.Resources>
 </Application>

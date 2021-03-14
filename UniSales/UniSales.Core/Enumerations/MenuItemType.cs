@@ -3,7 +3,7 @@
     public enum MenuItemType
     {
         Home,
-        Product,
+        Products,
         ShoppingCart,
         Contact,
         Logout

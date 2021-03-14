@@ -1,6 +1,0 @@
-C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales\UniSales.Android\obj\Debug\90\MonoAndroid,Version=v9.0.AssemblyAttributes.cs
-C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales\UniSales.Android\obj\Debug\90\build.props
-C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales\UniSales.Android\obj\Debug\90\adb.props
-C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales\UniSales.Android\obj\Debug\90\UniSales.Android.csprojAssemblyReference.cache
-C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales\UniSales.Android\obj\Debug\90\stamp\_BuildLibraryImportsCache.stamp
-C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales\UniSales.Android\obj\Debug\90\res.flag

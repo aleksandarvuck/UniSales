@@ -1,9 +1,9 @@
+﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using NLog.Web;
 using System;
-using System.IO;
+using UniSales.API.Models;
 
 namespace UniSales.API
 {
@@ -11,38 +11,30 @@ namespace UniSales.API
     {
         public static void Main(string[] args)
         {
-            var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
+            var host = BuildWebHost(args);
 
-            try
+            using (var scope = host.Services.CreateScope())
             {
-                logger.Debug("init main function");
-                CreateHostBuilder(args).Build().Run();
+                var services = scope.ServiceProvider;
+                var logger = services.GetService<ILogger>();
+
+                try
+                {
+                    var context = services.GetRequiredService<AppDbContext>();
+                    DbInitializer.Seed(context);
+                }
+                catch (Exception ex)
+                {
+                    logger.LogError(ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                logger.Error(ex, "Error in init");
-                throw;
-            }
-            finally
-            {
-                NLog.LogManager.Shutdown();
-            }
+
+            host.Run();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder
-                        .UseContentRoot(Directory.GetCurrentDirectory())
-                        .UseIISIntegration()
-                        .UseStartup<Startup>()
-                        .ConfigureLogging(logging =>
-                        {
-                            logging.ClearProviders();
-                            logging.SetMinimumLevel(LogLevel.Information);
-                        })
-                        .UseNLog();
-                });
+        public static IWebHost BuildWebHost(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>()
+                .Build();
     }
 }

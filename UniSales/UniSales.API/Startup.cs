@@ -1,15 +1,11 @@
-using AutoMapper;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
+using Microsoft.Extensions.Logging;
 using System;
-using UniSales.API.Contracts;
-using UniSales.API.DbContexts;
-using UniSales.API.Services;
+using UniSales.API.Models;
 
 namespace UniSales.API
 {
@@ -25,42 +21,66 @@ namespace UniSales.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers(setupAction =>
+            services.AddDbContext<AppDbContext>(options =>
             {
-                setupAction.ReturnHttpNotAcceptable = true;
-            }).AddXmlDataContractSerializerFormatters();
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+                    sqlServerOptionsAction: sqlOptions =>
+                    {
+                        //sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name);
+                        ////Configuring Connection Resiliency: https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency
+                        sqlOptions.EnableRetryOnFailure(10, TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
+                    });
 
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            services.AddScoped<IKorisnikRepository, KorisnikRepository>();
-            services.AddDbContext<UniSalesContext>(options =>
-            {
-                options.UseSqlServer(@"Server=USER-PC;Database=UniSales;Integrated Security = true");
+                // Changing default behavior when client evaluation occurs to throw.
+                // Default in EF Core would be to log a warning when client evaluation is performed.
+                //    options.ConfigureWarnings(warnings => warnings.Throw(RelationalEventId.QueryClientEvaluationWarning));
+                //Check Client vs. Server evaluation: https://docs.microsoft.com/en-us/ef/core/querying/client-eval
             });
 
-            services.AddSwaggerGen(c =>
+            services.AddMvc();
+
+            services.AddSwaggerGen(options =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "UniSales.API", Version = "v1" });
+                //options.DescribeAllEnumsAsStrings();
+                //options.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
+                //{
+                //    Title = "UniSales - Catalog API",
+                //    Version = "v1",
+                //    Description = "The Catalog HTTP API"
+                //});
+            });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            //loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            //loggerFactory.AddDebug();
+
             if (env.IsDevelopment())
             {
+                app.UseStatusCodePages();
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "UniSales.API v1"));
             }
 
-            app.UseRouting();
+            //app.UseCors("CorsPolicy");
 
-            app.UseAuthorization();
+            app.UseMvcWithDefaultRoute();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseSwagger()
+                .UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                });
         }
     }
 }

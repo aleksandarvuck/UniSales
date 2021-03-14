@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="UniSales.Core.Views.ContactView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls1="clr-namespace:UniSales.Core.Controls;assembly=UniSales.Core"
+    Title="Contact Us">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150" />
+                    <RowDefinition Height="500" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Image
+                    Grid.Row="0"
+                    Aspect="AspectFill"
+                    HeightRequest="150"
+                    Source="carousel1.jpg" />
+                <StackLayout
+                    Grid.Row="1"
+                    Margin="5"
+                    VerticalOptions="FillAndExpand">
+                    <Label
+                        Margin="0,5"
+                        HorizontalOptions="CenterAndExpand"
+                        Style="{StaticResource PageHeaderStyle}"
+                        Text="Contact us" />
+                    <Label
+                        Margin="0,5"
+                        HorizontalOptions="CenterAndExpand"
+                        Style="{StaticResource RegularStyle}"
+                        Text="" />
+                    <Label
+                        Margin="0,5"
+                        HorizontalOptions="CenterAndExpand"
+                        Style="{StaticResource RegularStyle}"
+                        Text="" />
+                    <controls1:RoundedEntry
+                        Margin="0,5"
+                        Placeholder="Email"
+                        Style="{StaticResource RoundedEntryStyle}"
+                        Text="{Binding Email, Mode=TwoWay}"
+                        WidthRequest="100" />
+                    <controls1:RoundedEntry
+                        Margin="0,5"
+                        Placeholder="Message"
+                        Style="{StaticResource RoundedEntryStyle}"
+                        Text="{Binding Message, Mode=TwoWay}"
+                        WidthRequest="100" />
+                    <Button
+                        Command="{Binding SubmitMessageCommand}"
+                        Style="{StaticResource RegularButton}"
+                        Text="Submit comment" />
+                    <Label
+                        Margin="0,5"
+                        Style="{StaticResource RegularStyle}"
+                        Text="Or give us a call. You can call us directly from the app by clicking the button below!" />
+                    <Button
+                        Command="{Binding CallPhone}"
+                        Style="{StaticResource RegularButton}"
+                        Text="Call Us" />
+                </StackLayout>
+                <StackLayout Grid.Row="2">
+                    <Image
+                        Aspect="Fill"
+                        HeightRequest="50"
+                        Source="patternwide.png" />
+                    <Label
+                        HorizontalOptions="Center"
+                        Style="{StaticResource RegularStyle}"
+                        Text="© 2021 UniSales Shop"
+                        VerticalOptions="Center" />
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

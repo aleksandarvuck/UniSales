@@ -98,48 +98,52 @@ namespace UniSales.Core.Services.General
         {
             Page page = CreateAndBindPage(viewModelType, parameter);
 
-            if (page is MainView || page is RegistrationView)
+            switch (page)
             {
-                CurrentApplication.MainPage = page;
-            }
-            else if (page is LoginView)
-            {
-                CurrentApplication.MainPage = page;
-            }
-            else if (CurrentApplication.MainPage is MainView)
-            {
-                var mainPage = CurrentApplication.MainPage as MainView;
-
-                if (mainPage.Detail is UniSalesNavigationPage navigationPage)
+                case MainView _:
+                case RegistrationView _:
+                case LoginView _:
+                    CurrentApplication.MainPage = page;
+                    break;
+                default:
                 {
-                    var currentPage = navigationPage.CurrentPage;
-
-                    if (currentPage.GetType() != page.GetType())
+                    switch (CurrentApplication.MainPage)
                     {
-                        await navigationPage.PushAsync(page);
+                        case MainView _:
+                        {
+                            var mainPage = CurrentApplication.MainPage as MainView;
+
+                            if (mainPage?.Detail is UniSalesNavigationPage navigationPage)
+                            {
+                                var currentPage = navigationPage.CurrentPage;
+
+                                if (currentPage.GetType() != page.GetType())
+                                {
+                                    await navigationPage.PushAsync(page);
+                                }
+                            }
+                            else
+                            {
+                                navigationPage = new UniSalesNavigationPage(page);
+                                if (mainPage != null) mainPage.Detail = navigationPage;
+                            }
+
+                            if (mainPage != null) mainPage.IsPresented = false;
+                            break;
+                        }
+                        case UniSalesNavigationPage navigationPage:
+                            await navigationPage.PushAsync(page);
+                            break;
+                        default:
+                            CurrentApplication.MainPage = new UniSalesNavigationPage(page);
+                            break;
                     }
-                }
-                else
-                {
-                    navigationPage = new UniSalesNavigationPage(page);
-                    mainPage.Detail = navigationPage;
-                }
 
-                mainPage.IsPresented = false;
-            }
-            else
-            {
-                if (CurrentApplication.MainPage is UniSalesNavigationPage navigationPage)
-                {
-                    await navigationPage.PushAsync(page);
-                }
-                else
-                {
-                    CurrentApplication.MainPage = new UniSalesNavigationPage(page);
+                    break;
                 }
             }
 
-            await ((ViewModelBase)page.BindingContext).InitializeAsync(parameter);
+            await (page.BindingContext as ViewModelBase).InitializeAsync(parameter);
         }
 
         protected Type GetPageTypeForViewModel(Type viewModelType)
@@ -170,6 +174,16 @@ namespace UniSales.Core.Services.General
 
         private void CreatePageViewModelMappings()
         {
+            _mappings.Add(typeof(LoginViewModel), typeof(LoginView));
+            _mappings.Add(typeof(MainViewModel), typeof(MainView));
+            _mappings.Add(typeof(MenuViewModel), typeof(MenuView));
+            _mappings.Add(typeof(HomeViewModel), typeof(HomeView));
+            _mappings.Add(typeof(CheckoutViewModel), typeof(CheckoutView));
+            _mappings.Add(typeof(ContactViewModel), typeof(ContactView));
+            _mappings.Add(typeof(ProductCatalogViewModel), typeof(ProductCatalogView));
+            _mappings.Add(typeof(ProductDetailViewModel), typeof(ProductDetailView));
+            _mappings.Add(typeof(RegistrationViewModel), typeof(RegistrationView));
+            _mappings.Add(typeof(ShoppingCartViewModel), typeof(ShoppingCartView));
         }
     }
 }

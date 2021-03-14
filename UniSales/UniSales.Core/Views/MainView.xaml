@@ -3,9 +3,11 @@
     x:Class="UniSales.Core.Views.MainView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:pages="clr-namespace:UniSales.Core.Views">
+    xmlns:views1="clr-namespace:UniSales.Core.Views;assembly=UniSales.Core"
+    Title="UniSales Shop"
+    MasterBehavior="Popover">
     <MasterDetailPage.Master>
-        <pages:MainView BindingContext="{Binding MenuViewModel}" />
+        <views1:MenuView BindingContext="{Binding MenuViewModel}" />
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
         <ContentPage />

@@ -1,12 +1,77 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="UniSales.Core.Views.LoginView">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+<ContentPage
+    x:Class="UniSales.Core.Views.LoginView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:UniSales.Core.Controls;assembly=UniSales.Core"
+    BackgroundColor="{StaticResource Purple}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="300" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <AbsoluteLayout
+            Grid.Row="1"
+            Grid.Column="1"
+            HeightRequest="300"
+            HorizontalOptions="FillAndExpand"
+            WidthRequest="200">
+
+            <Frame
+                Margin="0,25,0,25"
+                AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+                AbsoluteLayout.LayoutFlags="SizeProportional"
+                BackgroundColor="White"
+                CornerRadius="10"
+                HasShadow="true">
+                <StackLayout Margin="0,30">
+                    <Label Style="{StaticResource PageHeaderStyle}" Text="Sign in" />
+                    <StackLayout Orientation="Horizontal">
+                        <Label Style="{StaticResource RegularStyle}" Text="Not a member? " />
+                        <Label Style="{StaticResource LinkStyle}" Text="Register today!">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding RegisterCommand}" NumberOfTapsRequired="1" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                    <controls:RoundedEntry
+                        Placeholder="User name"
+                        Style="{StaticResource RoundedEntryStyle}"
+                        Text="{Binding UserName, Mode=TwoWay}"
+                        WidthRequest="100" />
+                    <controls:RoundedEntry
+                        IsPassword="True"
+                        Placeholder="Password"
+                        Style="{StaticResource RoundedEntryStyle}"
+                        Text="{Binding Password, Mode=TwoWay}"
+                        WidthRequest="100" />
+                    <Button
+                        Command="{Binding LoginCommand}"
+                        Style="{StaticResource RegularButton}"
+                        Text="Sign in" />
+                </StackLayout>
+            </Frame>
+            <Frame
+                Padding="0,0,0,0"
+                AbsoluteLayout.LayoutBounds="0.5,0,50,50"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                BackgroundColor="Transparent"
+                BorderColor="Transparent"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill">
+                <Image
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    Source="bethanylogowithborder.png"
+                    VerticalOptions="Start" />
+            </Frame>
+        </AbsoluteLayout>
+    </Grid>
 </ContentPage>
