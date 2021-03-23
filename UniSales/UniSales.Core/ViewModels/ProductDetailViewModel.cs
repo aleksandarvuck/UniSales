@@ -38,7 +38,7 @@ namespace UniSales.Core.ViewModels
         private async void OnAddToCart()
         {
             MessagingCenter.Send(this, MessagingConstants.AddProductToBasket, SelectedProduct);
-            await _dialogService.ShowDialog("Product added to your cart", "Success", "OK");
+            await DialogService.ShowDialog("Product added to your cart", "Success", "OK");
         }
 
         private void OnReadDescription()

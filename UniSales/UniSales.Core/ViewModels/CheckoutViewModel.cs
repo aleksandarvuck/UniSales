@@ -47,8 +47,8 @@ namespace UniSales.Core.ViewModels
         {
             await _orderDataService.PlaceOrder(Order);
             MessagingCenter.Send(this, "OrderPlaced");
-            await _dialogService.ShowDialog("Order placed successfully", "Success", "OK");
-            await _navigationService.PopToRootAsync();
+            await DialogService.ShowDialog("Order placed successfully", "Success", "OK");
+            await NavigationService.PopToRootAsync();
         }
     }
 }

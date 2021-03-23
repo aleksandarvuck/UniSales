@@ -81,23 +81,23 @@ namespace UniSales.Core.ViewModels
 
         private async void OnRegister()
         {
-            if (_connectionService.IsConnected)
+            if (ConnectionService.IsConnected)
             {
                 var userRegistered = await
                     _authenticationService.Register(_firstName, _lastName, _email, _userName, _password);
 
                 if (userRegistered.IsAuthenticated)
                 {
-                    await _dialogService.ShowDialog("Registration successful", "Message", "OK");
+                    await DialogService.ShowDialog("Registration successful", "Message", "OK");
                     _settingsService.UserIdSetting = userRegistered.User.Id;
-                    await _navigationService.NavigateToAsync<LoginViewModel>();
+                    await NavigationService.NavigateToAsync<LoginViewModel>();
                 }
             }
         }
 
         private void OnLogin()
         {
-            _navigationService.NavigateToAsync<LoginViewModel>();
+            NavigationService.NavigateToAsync<LoginViewModel>();
         }
     }
 }

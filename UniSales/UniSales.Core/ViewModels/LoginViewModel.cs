@@ -50,7 +50,7 @@ namespace UniSales.Core.ViewModels
         private async void OnLogin()
         {
             IsBusy = true;
-            if (_connectionService.IsConnected)
+            if (ConnectionService.IsConnected)
             {
                 var authenticationResponse = await _authenticationService.Authenticate(UserName, Password);
 
@@ -61,12 +61,12 @@ namespace UniSales.Core.ViewModels
                     _settingsService.UserNameSetting = authenticationResponse.User.FirstName;
 
                     IsBusy = false;
-                    await _navigationService.NavigateToAsync<MainViewModel>();
+                    await NavigationService.NavigateToAsync<MainViewModel>();
                 }
             }
             else
             {
-                await _dialogService.ShowDialog(
+                await DialogService.ShowDialog(
                     "This username/password combination isn't known",
                     "Error logging you in",
                     "OK");
@@ -75,7 +75,7 @@ namespace UniSales.Core.ViewModels
 
         private void OnRegister()
         {
-            _navigationService.NavigateToAsync<RegistrationViewModel>();
+            NavigationService.NavigateToAsync<RegistrationViewModel>();
         }
     }
 }

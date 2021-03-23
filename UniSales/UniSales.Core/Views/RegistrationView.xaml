@@ -69,7 +69,7 @@
                 <Image
                     Grid.Row="0"
                     Grid.RowSpan="2"
-                    Source="bethanylogowithborder.png"
+                    Source="logowithborder.png"
                     VerticalOptions="Start" />
             </Frame>
         </AbsoluteLayout>

@@ -13,27 +13,3 @@ C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.Core\obj\De
 C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\UniSales.Core.dll
 C:\Users\Aleksandar Vuckovic\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\UniSales.Core.pdb
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\App.xaml.g.cs
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\Templates\MenuItemTemplate.xaml.g.cs
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\Views\CheckoutView.xaml.g.cs
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\Views\ContactView.xaml.g.cs
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\Views\HomeView.xaml.g.cs
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\Views\LoginView.xaml.g.cs
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\Views\MainView.xaml.g.cs
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\Views\MenuView.xaml.g.cs
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\Views\RegistrationView.xaml.g.cs
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\Views\ShoppingCartView.xaml.g.cs
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\UniSales.Core.AssemblyInfoInputs.cache
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\UniSales.Core.AssemblyInfo.cs
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\UniSales.Core.csproj.CoreCompileInputs.cache
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\UniSales.Core.dll
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\UniSales.Core.pdb
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\bin\Debug\netstandard2.0\UniSales.Core.deps.json
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\bin\Debug\netstandard2.0\UniSales.Core.dll
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\bin\Debug\netstandard2.0\UniSales.Core.pdb
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\XamlC.stamp
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\Templates\ProductTemplate.xaml.g.cs
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\Views\ProductCatalogView.xaml.g.cs
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\Views\ProductDetailView.xaml.g.cs
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\Views\UniSalesNavigationPage.xaml.g.cs
-C:\Users\aleks\source\repos\UniSales\UniSales\UniSales.Core\obj\Debug\netstandard2.0\UniSales.Core.csprojAssemblyReference.cache

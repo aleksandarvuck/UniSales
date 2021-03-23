@@ -38,7 +38,7 @@ namespace UniSales.Core.ViewModels
 
         private void OnProductTapped(Product selectedProduct)
         {
-            _navigationService.NavigateToAsync<ProductDetailViewModel>(selectedProduct);
+            NavigationService.NavigateToAsync<ProductDetailViewModel>(selectedProduct);
         }
 
         public override async Task InitializeAsync(object data)

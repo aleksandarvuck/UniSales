@@ -46,13 +46,13 @@ namespace UniSales.Core.ViewModels
 
         private void OnProductTapped(Product selectedProduct)
         {
-            _navigationService.NavigateToAsync<ProductDetailViewModel>(selectedProduct);
+            NavigationService.NavigateToAsync<ProductDetailViewModel>(selectedProduct);
         }
 
         private async void OnAddToCart(Product selectedProduct)
         {
             MessagingCenter.Send(this, MessagingConstants.AddProductToBasket, selectedProduct);
-            await _dialogService.ShowDialog("Product added to your cart", "Success", "OK");
+            await DialogService.ShowDialog("Product added to your cart", "Success", "OK");
         }
     }
 }

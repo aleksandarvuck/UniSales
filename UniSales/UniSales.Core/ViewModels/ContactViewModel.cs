@@ -49,7 +49,7 @@ namespace UniSales.Core.ViewModels
         private async void OnSubmitMessage()
         {
             await _contactDataService.AddContactInfo(new ContactInfo() { Message = Message, Email = Email });
-            await _dialogService.ShowDialog("Thank you for your comment", "Thank you", "OK");
+            await DialogService.ShowDialog("Thank you for your comment", "Thank you", "OK");
         }
 
         private void OnCallPhone()

@@ -19,18 +19,19 @@ namespace UniSales.API.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Product>(ConfigureProduct);
+            modelBuilder.Entity<Product>()
+                .Property(p => p.Price)
+                .HasColumnType("decimal(18,2)");
             modelBuilder.Entity<Category>(ConfigureCategory);
             modelBuilder.Entity<ShoppingCart>(ConfigureShoppingCart);
             modelBuilder.Entity<ShoppingCartItem>(ConfigureShoppingCartItem);
             modelBuilder.Entity<ContactInfo>(ConfigureContactInfo);
             modelBuilder.Entity<Address>(ConfigureAddress);
-            modelBuilder.Entity<Order>(ConfigureOrder);
+            modelBuilder.Entity<Order>()
+                .Property(p => p.OrderTotal)
+                .HasColumnType("decimal(18,2)"); ;
         }
 
-        private void ConfigureOrder(EntityTypeBuilder<Order> obj)
-        {
-        }
 
         private void ConfigureAddress(EntityTypeBuilder<Address> obj)
         {
@@ -61,8 +62,5 @@ namespace UniSales.API.Models
                 .HasMaxLength(100);
         }
 
-        private void ConfigureProduct(EntityTypeBuilder<Product> entityTypeBuilder)
-        {
-        }
     }
 }

@@ -7,16 +7,16 @@ namespace UniSales.Core.ViewModels.Base
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
-        protected readonly IConnectionService _connectionService;
-        protected readonly INavigationService _navigationService;
-        protected readonly IDialogService _dialogService;
+        protected readonly IConnectionService ConnectionService;
+        protected readonly INavigationService NavigationService;
+        protected readonly IDialogService DialogService;
 
         public ViewModelBase(IConnectionService connectionService, INavigationService navigationService,
             IDialogService dialogService)
         {
-            _connectionService = connectionService;
-            _navigationService = navigationService;
-            _dialogService = dialogService;
+            ConnectionService = connectionService;
+            NavigationService = navigationService;
+            DialogService = dialogService;
         }
 
         private bool _isBusy;

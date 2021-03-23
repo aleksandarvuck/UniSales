@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
+using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using UniSales.API.Models;
 
 namespace UniSales.API
@@ -23,31 +24,20 @@ namespace UniSales.API
         {
             services.AddDbContext<AppDbContext>(options =>
             {
+
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
-                    sqlServerOptionsAction: sqlOptions =>
+                    sqlOptions =>
                     {
-                        //sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name);
-                        ////Configuring Connection Resiliency: https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency
-                        sqlOptions.EnableRetryOnFailure(10, TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
+                        sqlOptions.EnableRetryOnFailure(10, TimeSpan.FromSeconds(30), null);
                     });
 
-                // Changing default behavior when client evaluation occurs to throw.
-                // Default in EF Core would be to log a warning when client evaluation is performed.
-                //    options.ConfigureWarnings(warnings => warnings.Throw(RelationalEventId.QueryClientEvaluationWarning));
-                //Check Client vs. Server evaluation: https://docs.microsoft.com/en-us/ef/core/querying/client-eval
             });
 
-            services.AddMvc();
+            services.AddMvc(option => option.EnableEndpointRouting = false);
 
-            services.AddSwaggerGen(options =>
+            services.AddSwaggerGen(config =>
             {
-                //options.DescribeAllEnumsAsStrings();
-                //options.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
-                //{
-                //    Title = "UniSales - Catalog API",
-                //    Version = "v1",
-                //    Description = "The Catalog HTTP API"
-                //});
+                config.SwaggerDoc("v1", new OpenApiInfo { Title = "UniSales API", Version = "v1" });
             });
 
             services.AddCors(options =>
@@ -55,32 +45,27 @@ namespace UniSales.API
                 options.AddPolicy("CorsPolicy",
                     builder => builder.AllowAnyOrigin()
                         .AllowAnyMethod()
-                        .AllowAnyHeader()
-                        .AllowCredentials());
+                        .AllowAnyHeader());
+                // .AllowCredentials());
             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostEnvironment env, ILoggerFactory loggerFactory)
         {
-            //loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            //loggerFactory.AddDebug();
-
+            app.UseSwagger();
+            app.UseCors("CorsPolicy");
             if (env.IsDevelopment())
             {
                 app.UseStatusCodePages();
                 app.UseDeveloperExceptionPage();
-            }
-
-            //app.UseCors("CorsPolicy");
-
-            app.UseMvcWithDefaultRoute();
-
-            app.UseSwagger()
-                .UseSwaggerUI(c =>
+                app.UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "UniSales API");
+                    c.RoutePrefix = "";
                 });
+            }
+            app.UseMvcWithDefaultRoute();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace UniSales.API.Models
 {
@@ -6,6 +7,7 @@ namespace UniSales.API.Models
     {
         public string OrderId { get; set; }
 
+        [Column(TypeName = "decimal(18,2)")]
         public decimal OrderTotal { get; set; }
 
         public List<Product> Products { get; set; }

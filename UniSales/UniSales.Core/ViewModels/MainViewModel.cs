@@ -31,7 +31,7 @@ namespace UniSales.Core.ViewModels
             await Task.WhenAll
             (
                 _menuViewModel.InitializeAsync(data),
-                _navigationService.NavigateToAsync<HomeViewModel>()
+                NavigationService.NavigateToAsync<HomeViewModel>()
             );
         }
     }

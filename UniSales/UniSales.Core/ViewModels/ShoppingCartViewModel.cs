@@ -86,7 +86,7 @@ namespace UniSales.Core.ViewModels
 
         private void OnCheckOut()
         {
-            _navigationService.NavigateToAsync<CheckoutViewModel>();
+            NavigationService.NavigateToAsync<CheckoutViewModel>();
         }
 
         private void OnOrderPlaced()

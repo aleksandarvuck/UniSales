@@ -45,11 +45,11 @@ namespace UniSales.Core.ViewModels
             {
                 _settingsService.UserIdSetting = null;
                 _settingsService.UserNameSetting = null;
-                _navigationService.ClearBackStack();
+                NavigationService.ClearBackStack();
             }
 
             var type = menuItem?.ViewModelToLoad;
-            _navigationService.NavigateToAsync(type);
+            NavigationService.NavigateToAsync(type);
         }
 
         private void LoadMenuItems()
